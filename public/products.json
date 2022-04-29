@@ -1,0 +1,78 @@
+[
+    {
+        "name": "HP",
+        "img": "https://i.ibb.co/kHm7QHS/laptop-mock-up-1310-197.webp",
+        "price": "50000 BDT",
+        "description":"Processor Intel Pentium Silver N5030 (4M Cache, 1.10 GHz up to 3.10 GHz), Memory: 4 GB DDR4 2400MHz RAM, Storage: 1 TB 5400 rpm SATA HDD, Display 15.6Inc HD (1366 x 768)",
+	"quantity":20,
+	"supplier":"Nafis Iqbal"        
+
+    },
+    {
+        "name": "Apple MacBook",
+        "img": "https://i.ibb.co/zxxv2Xb/laptop-screen-airport-lounge-53876-113637.webp",
+        "price": "135000 BDT",
+        "description":"Apple M1 chip with 8-core CPU and 7-core GPU, 8GB RAM, 256GB SSD, 13.3-inch 2560x1600 LED-backlit Retina Display",
+	"quantity":10,
+	"supplier":"Robin Roy" 
+        
+    },
+    {
+         "name": "Asus",
+        "img": "https://i.ibb.co/h7d2d81/close-up-laptop-mockup-with-potted-plant-253059-150.webp",
+        "price": "65000 BDT",
+        "description":"Processor: Intel Celeron N4500 (4M Cache, 1.10 GHz up to 2.80 GHz), Memory: 4GB DDR4 RAM, Storage: 1TB 5400RPM HDD, Display: 15.6Inc HD (1366 x 768)",
+	"quantity":7,
+	"supplier":"Raian Sami" 
+    },
+    {
+         "name": "Lenovo",
+        "img": "https://i.ibb.co/zbNj1ZD/close-up-floating-laptop-mockup-308775-7.webp",
+        "price": "45000 BDT",
+        "description":"Processor: Intel Celeron N4020 (4M Cache,1.10 GHz up to 2.80 GHz), RAM: 4GB DDR4 2400Mhz, SSD: 256GB NVMe PCIe, Display: 15.6Inc HD (1366x768)",
+	"quantity":12,
+	"supplier":"Miraz Ayon" 
+    },
+    {
+         "name": "Dell",
+        "img": "https://i.ibb.co/rsFhFq5/laptop-mockup-with-pastel-pink-wall-53876-98703.webp",
+        "price": "56000 BDT",
+        "description":"Processor: Intel Celeron N4020 Dual Core (4MB Cache, 1.10 GHz Up To 2.80 GHz) Processor, RAM: 4GB 2400MHz DDR4, Storage: 1TB SATA 5400RPM, Display: 15.6Inc HD (1366 x 768) LED",
+	"quantity":11,
+	"supplier":"Nabil Ahmed" 
+    },
+    {
+        "name": "Samsung",
+        "img": "https://i.ibb.co/dLQx939/beautiful-laptop-screen-mockup-ad-with-presentation-slides-53876-98790.webp",
+        "price": "1450000 BDT",
+        "description":"Intel Core i7-1165G7 Processor (12M Cache, 2.80 GHz up to 4.70 GHz), 16GB RAM + 1TB SSD, 15.6Inc FHD Super AMOLED touch display, Convertible 2-in-1 design",
+	"quantity":10,
+	"supplier":"Sagor Akhondo" 
+    },
+    {
+         "name": "Avita Laptops",
+        "img": "https://i.ibb.co/n81jhKT/laptop-gray-floating-mockup-54625-55.webp",
+        "price": "650000 BDT",
+        "description":"Intel Celeron Processor N4020 (4M Cache, 1.10 GHz up to 2.80 GHz), 4GB LPDDR4 RAM, 256GB SATA M.2 SSD, 14Inc FHD (1920 x 1080) IPS Display",
+	"quantity":13,
+	"supplier":"Emran Hossain" 
+    },
+    {
+         "name": "Toshiba",
+        "img": "https://i.ibb.co/s6sTZZD/modern-devices-dark-mockup-117023-208.webp",
+        "price": "540000 BDT",
+        "description":"Toshiba C640 Core i3 (2nd Gen) 4GB Ram, 500GB HDD (used laptop)",
+	"quantity":17,
+	"supplier":"Salman Samil" 
+    },
+    {
+         "name": "MSI Laptops",
+        "img": "https://i.ibb.co/XxfsGWd/customizable-high-quality-15-4-inch-laptop-mock-ups-design-right-tilted-position-39605-224.webp",
+        "price": "520000 BDT",
+        "description":"Intel Core i3 10110U Processor (4MB Cache, 2.1Ghz up to 4.1Ghz), 8GB DDR4 RAM, 512GB NVMe SSD, 14Inc (1920 x 1080) FHD Display",
+	"quantity":8,
+	"supplier":"Kamrul Jain" 
+    }
+  
+    
+]

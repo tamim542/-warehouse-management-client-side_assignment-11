@@ -1,0 +1,33 @@
+.nav-bar{
+    background-color: rgb(179, 4, 4);
+    height: 55px;
+    display: flex;
+    
+    align-items: center;
+    
+    
+}
+
+.header{
+    margin-left:200px ;
+    margin-right:200px ;
+    text-decoration: none;
+    
+    
+    
+}
+.link-decoration{
+    text-decoration: none;
+    color: beige;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: larger;
+    
+    
+}
+.link-decoration:hover{
+    color: darkolivegreen;
+}
+.link-decoration:focus{
+    color: darkolivegreen;
+}
