@@ -3,6 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 const Home = () => {
     const [products,setProducts]=useProducts();
     const products1=products.slice(1,7);
@@ -37,11 +38,14 @@ const Home = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
+<br></br>
+<br></br>
+<br></br>
 
         {/* -----------Project Title----------- */}
 
-        <h1 style={{fontWeight:'bold', textAlign:'center'}}>Latest Laptop Store House</h1>
-
+        <h1 style={{fontWeight:'bold', textAlign:'center'}}><span style={{color:'green'}}>Latest Laptop</span> <span style={{color:'red'}}>Store House</span></h1>
+<br></br>
 
         {/* --------six item from homepage-------- */}
         <div className='card-design'>
@@ -58,7 +62,7 @@ const Home = () => {
     </Card.Text>
     <Card.Title>Quantity: {product.quantity}</Card.Title>
     <Card.Title>Supplier Man: {product.supplier}</Card.Title>
-    <Button variant="primary">Update</Button>
+    <Link to='/inventory'> <Button variant="primary">Update</Button></Link>
   </Card.Body>
 </Card>
                     </div>)

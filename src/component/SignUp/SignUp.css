@@ -1,0 +1,48 @@
+
+ .signup-center{
+     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+ }
+ .signup-form{
+   
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #31c75e;
+    border-radius: 3px;
+     
+    
+     
+ }
+ #email-form{
+     height: 40px;
+     width: 400px;
+     margin-bottom: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+     border: 1px solid #31c75e;
+     border-radius: 3px;
+    
+ }
+ #password-form{
+     height: 40px;
+     width: 400px;
+     margin-bottom: 10px;
+     border-radius: 3px;
+     border: 1px solid #31c75e;
+ }
+ .button-form{
+     height: 40px;
+     width: 408px;
+     cursor: pointer;
+     border-radius: 3px;
+     border: 1px solid #31c75e;
+     background-color: #31c75e;
+     
+     
+ }
+ .login-color{
+     color: #d1330c;
+     font-weight: bold;
+     text-decoration: none;
+ }
