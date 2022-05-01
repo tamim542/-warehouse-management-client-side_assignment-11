@@ -10,6 +10,9 @@ import Login from './component/Login/Login';
 import SignUp from './component/SignUp/SignUp';
 import RequireAuth from './component/RequireAuth/RequireAuth';
 import ManageInventory from './component/ManageInventory/ManageInventory';
+import ManageItem from './component/ManageItem/ManageItem';
+import AddItem from './component/AddItem/AddItem';
+import MyItem from './component/MyItem/MyItem';
 
 function App() {
   return (
@@ -18,6 +21,22 @@ function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        
+        <Route path="/manageitem" element={
+        <RequireAuth>
+          <ManageItem/>
+        </RequireAuth>} />
+
+        <Route path="/additem" element={
+        <RequireAuth>
+          <AddItem />
+        </RequireAuth>} />
+
+        <Route path="/myitem" element={
+        <RequireAuth>
+          <MyItem />
+        </RequireAuth>} />
+
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
