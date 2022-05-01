@@ -3,11 +3,16 @@ import { Button, Card } from 'react-bootstrap';
 import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Home = () => {
     const [products,setProducts]=useProducts();
     const products1=products.slice(1,7);
-    console.log('product=',products1);
+    const navigate = useNavigate();
+
+    const navigateToInventory = id =>{
+     navigate(`/inventory/${id}`)
+  }
+   
     return (
         <div>
             {/* --------carousel from bootstrap-------- */}
@@ -62,12 +67,15 @@ const Home = () => {
     </Card.Text>
     <Card.Title>Quantity: {product.quantity}</Card.Title>
     <Card.Title>Supplier Man: {product.supplier}</Card.Title>
-    <Link to='/inventory'> <Button variant="primary">Update</Button></Link>
+    <Button variant="primary" onClick={() => navigateToInventory(product._id)}>Update</Button>
   </Card.Body>
 </Card>
                     </div>)
                 }
             
+        </div>
+        <div className='div-button'>
+           <Link to='/manageInventory'><button className='inventory-button'>Manage Inventory</button></Link> 
         </div>
 
         </div>

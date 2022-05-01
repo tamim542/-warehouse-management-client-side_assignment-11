@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css'
 import googleIcon from '../../images/Google_Icons.png'
+import Loading from '../Shered/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -38,7 +39,7 @@ const Login = () => {
     );
   }
   if (loading || loadingGoogle) {
-    return <p>Loading...</p>;
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Loading></Loading></div>
   }
   if (user || userGoogle) {
     navigate(from, { replace: true });
