@@ -1,0 +1,8 @@
+.card-design{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}

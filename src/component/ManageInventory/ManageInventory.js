@@ -5,10 +5,18 @@ import './ManageInventory.css';
 import useProducts from '../../Hooks/useProducts';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shered/Loading/Loading';
 
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
+    
+
+    if (loading) {
+        return <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Loading></Loading></div>
+    }
+
+   
 
     //----------- add item -------------
 
@@ -29,7 +37,7 @@ const ManageInventory = () => {
         })
 
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => setProducts(data));
 
     }
 
@@ -67,7 +75,7 @@ const ManageInventory = () => {
                                     {product.description}
                                 </Card.Text>
                                 <Card.Title>Quantity: {product.quantity}</Card.Title>
-                                <Card.Title>Supplier Man: {product.supplier}</Card.Title>
+                                <Card.Title>Supplier Man: {product.suppliernam}</Card.Title>
 
 
                                <Button variant="danger" onClick={() => handleDelete(product._id)}>Delete</Button>
@@ -129,7 +137,7 @@ const ManageInventory = () => {
             </div>
 
 
-            {/*---------- delete item--------*/}
+           
 
 
 
