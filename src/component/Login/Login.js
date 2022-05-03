@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Login.css'
 import googleIcon from '../../images/Google_Icons.png'
 import Loading from '../Shered/Loading/Loading';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-const Login = () => {
 
+const Login = () => {
+  
+  const emailRef = useRef('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -19,7 +26,7 @@ const Login = () => {
   ] = useSignInWithEmailAndPassword(auth);
 
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
-
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   let location = useLocation();
   let from = location.state?.from?.pathname || '/'
   const handleEmailField = (event) => {
@@ -52,6 +59,23 @@ const Login = () => {
 
 
   }
+
+  
+// reset password
+const resetPassword = async () => {
+  const email =emailRef.current.value;
+  if (email) {
+      await sendPasswordResetEmail(email);
+      toast('Sent email');
+      
+  }
+  else{
+      //toast('please enter your email address');
+      console.log('wrong hi');
+  }
+}
+
+
   return (
     <div>
       <div className='take-center'>
@@ -61,7 +85,7 @@ const Login = () => {
             <h1 style={{ color: '#3a0abe' }}>Login</h1>
             <span>Email</span>
             <br />
-            <input onBlur={handleEmailField} type="email" name='email' className='email-field' required />
+            <input onBlur={handleEmailField} ref={emailRef} type="email" name='email' className='email-field' required />
             <br />
 
             <span>password</span>
@@ -74,7 +98,7 @@ const Login = () => {
             <br />
           </form>
           <p>Latest Laptop Warehouse?<Link className='account-color' to="/signup">create an account</Link></p>
-          <p>Forget Password? <span className='reset-password' >Reset Password</span> </p>
+          <p>Forget Password? <span className='reset-password' onClick={resetPassword}>Reset Password</span> </p>
         </div>
       </div>
 
@@ -98,7 +122,7 @@ const Login = () => {
         </div>
         
       
-
+        <ToastContainer />
     </div>
   );
 };

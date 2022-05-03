@@ -46,3 +46,15 @@
     
     
 }
+.inventory-button{
+    background-color: #06c044;
+    color: aliceblue;
+    font-weight: bold;
+    padding-left:13px ;
+    padding-right:13px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #06c044;
+    border-radius: 3px;
+    
+}
