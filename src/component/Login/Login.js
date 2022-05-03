@@ -10,11 +10,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { async } from '@firebase/util';
+import axios from 'axios';
 
 
 const Login = () => {
   
   const emailRef = useRef('');
+  const passwordRef = useRef('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -38,6 +41,19 @@ const Login = () => {
     setPassword(password);
   }
 
+  
+
+  const handleForm = async(event) => {
+    event.preventDefault();
+    const email=emailRef.current.value;
+    const password=passwordRef.current.value
+    await signInWithEmailAndPassword(email, password)
+    const {data}=await axios.post('http://localhost:5000/login',{email})
+    localStorage.setItem('accessToken',data.accessToken);
+    navigate(from, { replace: true });
+
+  }
+
   if (error || errorGoogle) {
     return (
       <div>
@@ -50,14 +66,6 @@ const Login = () => {
   }
   if (user || userGoogle) {
     navigate(from, { replace: true });
-  }
-
-  const handleForm = (event) => {
-    event.preventDefault();
-
-    signInWithEmailAndPassword(email, password)
-
-
   }
 
   
@@ -91,7 +99,7 @@ const resetPassword = async () => {
             <span>password</span>
             <br />
 
-            <input onBlur={handlePassworField} type="password" name='pass' className='password-field' required />
+            <input onBlur={handlePassworField} ref={passwordRef} type="password" name='pass' className='password-field' required />
             <br />
             <br />
             <button className='button-field'><span style={{ color: 'white', fontWeight: 'bold' }}>Login</span></button>

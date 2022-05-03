@@ -2,8 +2,10 @@ import { Button, Card } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-
+import axiosPrivate from '../../Axios/axiosPrivate';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+//import axios from 'axios';
 
 
 const MyItem = () => {
@@ -14,13 +16,37 @@ const MyItem = () => {
     useEffect( () => {
         
         const getItems = async() =>{
-           const email = user.email;
-            const url = `http://localhost:5000/item?email=${email}`;
+        //    const email = user.email;
+        //     const url = `http://localhost:5000/item?email=${email}`;
          
-              fetch(url)
-              .then(res=>res.json())
-              .then(data=>setItems(data))
+        //       fetch(url)
+        //       .then(res=>res.json())
+        //       .then(data=>setItems(data))
+            ///---------------
+            const email = user.email;
+            const url = `http://localhost:5000/item?email=${email}`;
             
+              try{
+                // const {data} = await axios.get(url,{
+                //     headers:{
+                //         authorization:`Bearer ${localStorage.getItem('accessToken')}`
+                    
+                //     }
+                const {data} = await axiosPrivate.get(url);
+                setItems(data);
+                console.log('items={what}');
+                }
+             
+                //setItems(data);
+              catch(error){
+                  console.log('error Message=',error.message);
+                  if(error.response.status === 401 || error.response.status === 403){
+                    signOut(auth);
+                    navigate('/login')
+                }
+              }
+            
+           
             
         }
         getItems();
@@ -44,7 +70,7 @@ const MyItem = () => {
             })
         }
     }
-
+console.log('items=',items);
     return (
         <div>
             {/* --------all item from homepage-------- */}
