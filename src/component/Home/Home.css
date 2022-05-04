@@ -24,3 +24,26 @@
     border-radius: 3px;
     
 }
+.extra-section1{
+    margin-top: 60px;
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+}
+.brand-div{
+    height: 300px;
+    width: 350px;
+    margin-right: 10px;
+    background-color: black;
+   
+
+}
+.brand-name{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.img-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

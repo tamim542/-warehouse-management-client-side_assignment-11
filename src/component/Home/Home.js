@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { map } from '@firebase/util';
 const Home = () => {
   const [products, setProducts] = useProducts();
   const products1 = products.slice(1, 7);
@@ -13,6 +14,18 @@ const Home = () => {
     const id1= id.toString();
     navigate(`/inventory/${id1}`)
   }
+
+//-------extrea two section------
+
+const [brand,setBrand]=useState([])
+    
+        useEffect(()=>{
+            fetch('http://localhost:5000/productCount')
+            .then(res=>res.json())
+            .then(data=>setBrand(data))
+          },[])
+    
+
 
   return (
     <div>
@@ -78,6 +91,25 @@ const Home = () => {
       <div className='div-button'>
         <Link to='/manageInventory'><button className='inventory-button'>Manage Inventory</button></Link>
       </div>
+
+      {/* -------extrea two section------ */}
+      <div className='extra-section1'>
+        <div className='brand-div'>
+        <h1 style={{color:'white',padding:'7px'}}>Total Brand: {brand.count}</h1>
+        <div className='brand-name'>
+         {
+           products.map(product=><div style={{color:'white', padding:'7px'}}>{product.name} </div>)
+         }
+        </div>
+        </div>
+        <div className='brand-div img-banner'>
+          <img  src='https://i.ibb.co/Ny2y8L7/black-friday-sale-banner-yellow-black-glued-paper-background-1361-3496.webp' style={{height:'280px', width:'298px'}} alt='...'/>
+        </div>
+        <div className='brand-div img-banner'>
+        <img  src='https://i.ibb.co/s64X4mf/silver-label-best-product-year-1017-7340.webp' style={{height:'280px', width:'298px'}} alt='...'/>
+        </div>
+      </div>
+
 
     </div>
   );
