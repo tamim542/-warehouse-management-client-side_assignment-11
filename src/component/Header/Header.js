@@ -17,6 +17,8 @@ const Header = () => {
 
                     <Link className='link-decoration' to="/">Home</Link>
                     <Link className='link-decoration' to="/blog">Blog</Link>
+                    <Link className='link-decoration' to="/about">About</Link>
+                    <Link className='link-decoration' to="/contact">Contact</Link>
                     {/* <Link className='link-decoration' to="/login">Login</Link> */}
                     {
                         user ?<span><Link className="link-decoration" to="/manageitem">MangeItem</Link><Link className="link-decoration" to="/additem">AddItem</Link><Link className="link-decoration" to="/myitem">MyItem</Link> <button className="signOut-button" onClick={handleSignOut}>Signout</button></span> : <Link className="link-decoration" to="/login">Login</Link>

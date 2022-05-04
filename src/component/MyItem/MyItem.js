@@ -72,7 +72,7 @@ const MyItem = () => {
     }
 console.log('items=',items);
     return (
-        <div>
+        <div style={{ minHeight: '100vh'}}>
             {/* --------all item from homepage-------- */}
             <div className='card-design'>
 

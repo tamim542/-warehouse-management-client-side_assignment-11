@@ -13,6 +13,9 @@ import ManageInventory from './component/ManageInventory/ManageInventory';
 import ManageItem from './component/ManageItem/ManageItem';
 import AddItem from './component/AddItem/AddItem';
 import MyItem from './component/MyItem/MyItem';
+import About from './component/About/About';
+import Contact from './component/Contact/Contact';
+
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         
         <Route path="/manageitem" element={
         <RequireAuth>
@@ -47,6 +52,7 @@ function App() {
       }></Route>
       </Routes>
       <Footer></Footer>
+      
     </div>
   );
 }

@@ -1,0 +1,60 @@
+.card-design{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* form new item add */
+
+
+.form-center{
+    margin-top: 30px;
+   display: flex;
+   justify-content: center;
+}
+.input-form{
+  
+   padding-left: 20px;
+   padding-bottom: 20px;
+   border: 1px solid #31c75e;
+   border-radius: 3px;
+    
+   
+    
+}
+.input-feild{
+    height: 40px;
+    width: 400px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #31c75e;
+    border-radius: 3px;
+   
+}
+
+.button-form{
+    height: 40px;
+    width: 408px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #31c75e;
+    background-color: #31c75e;
+    
+    
+}
+.inventory-button{
+    background-color: #06c044;
+    color: aliceblue;
+    font-weight: bold;
+    padding-left:13px ;
+    padding-right:13px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #06c044;
+    border-radius: 3px;
+    
+}

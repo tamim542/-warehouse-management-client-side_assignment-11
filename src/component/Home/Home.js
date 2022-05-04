@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+//import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
 import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { map } from '@firebase/util';
+//import { map } from '@firebase/util';
 const Home = () => {
   const [products, setProducts] = useProducts();
   const products1 = products.slice(1, 7);
@@ -92,7 +93,9 @@ const [brand,setBrand]=useState([])
         <Link to='/manageInventory'><button className='inventory-button'>Manage Inventory</button></Link>
       </div>
 
-      {/* -------extrea two section------ */}
+      
+
+      {/* -------extrea one section------ */}
       <div className='extra-section1'>
         <div className='brand-div'>
         <h1 style={{color:'white',padding:'7px'}}>Total Brand: {brand.count}</h1>
@@ -111,6 +114,7 @@ const [brand,setBrand]=useState([])
       </div>
 
 
+         
     </div>
   );
 };
