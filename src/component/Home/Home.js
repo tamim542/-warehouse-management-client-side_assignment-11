@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-//import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
 import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +9,10 @@ import { Link, useNavigate } from 'react-router-dom';
 const Home = () => {
   const [products, setProducts] = useProducts();
   const products1 = products.slice(1, 7);
+
+  const data1=products.slice(0,4);
+   const data2=products.slice(4,8);
+
   const navigate = useNavigate();
 
   const navigateToInventory = id => {
@@ -67,11 +71,11 @@ const [brand,setBrand]=useState([])
       <h1 style={{ fontWeight: 'bold', textAlign: 'center' }}><span style={{ color: 'green' }}>Latest Laptop</span> <span style={{ color: 'red' }}>Store House</span></h1>
       <br></br>
 
-      {/* --------six item from homepage-------- */}
-      <div className='card-design'>
-
+      {/* --------six item from homepage---card-design ------- */}
+      <div className=' row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
+      
         {
-          products1.map(product => <div >
+          products1.map(product => <div className='col'> <div className='card h-100'>
             <Card style={{}}>
               <Card.Img variant="top" src={product.img} />
               <Card.Body>
@@ -85,9 +89,9 @@ const [brand,setBrand]=useState([])
                 <Button variant="primary" onClick={() => navigateToInventory(product._id)}>Update</Button>
               </Card.Body>
             </Card>
-          </div>)
+          </div></div>)
         }
-
+      
       </div>
       <div className='div-button'>
         <Link to='/manageInventory'><button className='inventory-button'>Manage Inventory</button></Link>
@@ -96,6 +100,9 @@ const [brand,setBrand]=useState([])
       
 
       {/* -------extrea one section------ */}
+      <br></br>
+      <h3 style={{ fontWeight: 'bold', textAlign: 'center' }}><span style={{ color: 'green' }}>History of Company</span> </h3>
+      <br></br>
       <div className='extra-section1'>
         <div className='brand-div'>
         <h1 style={{color:'white',padding:'7px'}}>Total Brand: {brand.count}</h1>
@@ -112,9 +119,72 @@ const [brand,setBrand]=useState([])
         <img  src='https://i.ibb.co/s64X4mf/silver-label-best-product-year-1017-7340.webp' style={{height:'280px', width:'298px'}} alt='...'/>
         </div>
       </div>
+          <br></br>
+          {/* extra section two */}
 
-
+          <h3 style={{ fontWeight: 'bold', textAlign: 'center' }}><span style={{ color: 'green' }}>Graphical View of Record</span> </h3>
+      <br/>
          
+            <div className='dashboard-chart'>
+            <LineChart width={600} height={300} data={products}>
+            <Line type="monotone" dataKey="quantity" stroke="#8884d8" />
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip></Tooltip>
+            </LineChart>
+        
+
+            
+            {/* <BarChart -------------- */}
+            <BarChart
+          width={500}
+          height={300}
+          data={products}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="quantity" fill="#8884d8" background={{ fill: '#eee' }} />
+          <Bar dataKey="price" fill="#82ca9d" />
+        </BarChart>
+
+
+
+        <AreaChart
+          width={500}
+          height={400}
+          data={products}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="price" stackId="1" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="quantity" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+        </AreaChart>
+
+
+        <PieChart width={500} height={500}>
+          <Pie data={data1} dataKey="quantity" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
+          <Pie data={data2} dataKey="quantity" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
+        </PieChart>
+
+         </div>
     </div>
   );
 };

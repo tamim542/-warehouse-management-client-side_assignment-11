@@ -1,10 +1,6 @@
-.card-design{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
-}
+
+
+
 .div-button{
     display: flex;
     justify-content: center;
@@ -46,4 +42,83 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dashboard-chart{
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-right: 80px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+}
+
+/*----------------------------------------
+          responsive for mobile
+----------------------------------------*/
+
+@media only screen and (max-width:688px){
+ 
+
+    .div-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .inventory-button{
+        background-color: #06c044;
+        color: aliceblue;
+        font-weight: bold;
+        padding-left:13px ;
+        padding-right:13px ;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #06c044;
+        border-radius: 3px;
+        
+    }
+
+    .extra-section1{
+        display: block;
+        margin-top: 60px;
+        margin-bottom: 10;
+        margin-left: 10px;
+        margin-right: 10px;
+       
+    }
+    .child-div{
+        margin-bottom: 10;
+    }
+
+    .brand-div{
+        height: 300px;
+        width: 300px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+        background-color: black;
+       
+    
+    }
+    .brand-name{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .img-banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dashboard-chart{
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 8px;
+    }
+    
+
 }

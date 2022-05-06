@@ -15,6 +15,8 @@ import AddItem from './component/AddItem/AddItem';
 import MyItem from './component/MyItem/MyItem';
 import About from './component/About/About';
 import Contact from './component/Contact/Contact';
+import NotFound from './component/NotFound/NotFound';
+
 
 
 function App() {
@@ -23,9 +25,11 @@ function App() {
       <Header></Header>
        <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound/>} />
         
         <Route path="/manageitem" element={
         <RequireAuth>
@@ -52,7 +56,7 @@ function App() {
       }></Route>
       </Routes>
       <Footer></Footer>
-      
+     
     </div>
   );
 }

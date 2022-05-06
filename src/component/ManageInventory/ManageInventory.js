@@ -37,7 +37,7 @@ const ManageInventory = () => {
         })
 
             .then(response => response.json())
-            .then(data => setProducts(data));
+            .then(data => console.log(data));
 
     }
 

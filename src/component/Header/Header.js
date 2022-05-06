@@ -13,8 +13,8 @@ const Header = () => {
     return (
         <div>
             <div className='nav-bar'>
-                <nav className='header'>
-
+                <div className='header'>
+                    <div className='menu'>
                     <Link className='link-decoration' to="/">Home</Link>
                     <Link className='link-decoration' to="/blog">Blog</Link>
                     <Link className='link-decoration' to="/about">About</Link>
@@ -23,8 +23,8 @@ const Header = () => {
                     {
                         user ?<span><Link className="link-decoration" to="/manageitem">MangeItem</Link><Link className="link-decoration" to="/additem">AddItem</Link><Link className="link-decoration" to="/myitem">MyItem</Link> <button className="signOut-button" onClick={handleSignOut}>Signout</button></span> : <Link className="link-decoration" to="/login">Login</Link>
                     }
-
-                </nav>
+                    </div>
+                </div>
             </div>
         </div>
     );
