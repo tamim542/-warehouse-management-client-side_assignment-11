@@ -5,8 +5,24 @@ import useProducts from '../../Hooks/useProducts';
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
-//import { map } from '@firebase/util';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Shered/Loading/Loading';
+
 const Home = () => {
+
+
+  //  ///loading spinner
+  //  const [
+  //   signInWithEmailAndPassword,
+  //   user,
+  //   loading,
+  //   error,
+  // ] = useSignInWithEmailAndPassword(auth);
+  // if (loading ) {
+  //   <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Loading></Loading></div>
+  // }else{
+
   const [products, setProducts] = useProducts();
   const products1 = products.slice(1, 7);
 
@@ -19,6 +35,7 @@ const Home = () => {
     const id1= id.toString();
     navigate(`/inventory/${id1}`)
   }
+
 
 //-------extrea two section------
 

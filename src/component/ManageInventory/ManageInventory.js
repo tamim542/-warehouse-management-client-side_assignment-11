@@ -39,6 +39,8 @@ const ManageInventory = () => {
             .then(response => response.json())
             .then(data => console.log(data));
 
+            event.target.reset();
+
     }
 
     //------------Delete item----------------

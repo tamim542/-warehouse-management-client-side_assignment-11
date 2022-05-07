@@ -57,15 +57,6 @@ const Inventory = () => {
     const quantityInput = event.target.quantity.value;
     const quantityInt=parseInt(quantityInput);
     const quantityAdd=quantityInt+quantity1;
-    console.log('quantity=',quantityAdd);
-    
-
-    //new 
-
-    
-    
-    
-    
     
 
     const updatedQuantity = {quantity:quantityAdd,...rest};
@@ -85,35 +76,14 @@ const Inventory = () => {
             console.log('success', data);
             alert('Quantity Add Successfully');
         })
-            // event.target.reset();
+
+        //reset field
+             event.target.reset();
 
 
    }
     
-        
-     //    const quantityValue = event.target.quantity.value;
-//     //     const quantityInt = parseInt(quantity);
-//     //     const quantity1 = quantityInt + quantityValue;
-
-//     //     const updatedDelivered =  quantity1 ;
-//     //    console.log('quantityValue=',quantityValue,'quantity=',quantity)
-//         // put data to the server
-//         const url = `http://localhost:5000/products/${id}`;
-//         fetch(url, {
-//             method: 'PUT',
-//             headers: {
-//                 'content-type': 'application/json'
-//             },
-//             body: JSON.stringify({ updatedDelivered })
-//         })
-//             .then(res => res.json())
-//             .then(data => {
-//                 console.log('success', data);
-//                 alert('Add quantity successfully');
-//                 // event.target.reset();
-//             })
-//     }
-
+    
             
 
     return (

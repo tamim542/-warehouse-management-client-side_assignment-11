@@ -41,7 +41,7 @@ const Login = () => {
     setPassword(password);
   }
 
-  
+  ///jwt for email password --------
 
   const handleForm = async(event) => {
     event.preventDefault();
@@ -53,6 +53,18 @@ const Login = () => {
     navigate(from, { replace: true });
 
   }
+
+  ///jwt for google signin --------
+
+  const handleGoogleSignin=async()=>{
+    await signInWithGoogle(email); 
+    const {data}=await axios.post('http://localhost:5000/login',{email})
+    console.log('dataWithEmail=',data);
+    localStorage.setItem('accessToken',data.accessToken);
+    navigate(from, { replace: true });
+  }
+  
+  ///jwt ending
 
   if (error || errorGoogle) {
     return (
@@ -79,7 +91,7 @@ const resetPassword = async () => {
   }
   else{
       //toast('please enter your email address');
-      console.log('wrong hi');
+      //console.log('wrong hi');
   }
 }
 
@@ -121,7 +133,7 @@ const resetPassword = async () => {
       <div className='icon-blog'>
         <div className='social-icon'>
         <button
-                    onClick={() => signInWithGoogle()}
+                    onClick={() =>handleGoogleSignin()}
                     className='rounded-1 border border-success mx-auto my-2'>
                     <img style={{ width: '30px' }} src={googleIcon} alt="" />
                     <span className='px-2 fw-bold'>Google Sign In</span>
