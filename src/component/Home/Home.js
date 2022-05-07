@@ -143,7 +143,7 @@ const [brand,setBrand]=useState([])
       <br/>
          
             <div className='dashboard-chart'>
-            <LineChart width={600} height={300} data={products}>
+            <LineChart className='bar-chart' width={600} height={300} data={products}>
             <Line type="monotone" dataKey="quantity" stroke="#8884d8" />
             <CartesianGrid stroke="#ccc" />
             <XAxis dataKey="name" />
@@ -155,6 +155,7 @@ const [brand,setBrand]=useState([])
             
             {/* <BarChart -------------- */}
             <BarChart
+            className='bar-chart'
           width={500}
           height={300}
           data={products}
@@ -176,7 +177,8 @@ const [brand,setBrand]=useState([])
 
 
 
-        <AreaChart
+        <AreaChart 
+        className='bar-chart'
           width={500}
           height={400}
           data={products}
@@ -196,7 +198,7 @@ const [brand,setBrand]=useState([])
         </AreaChart>
 
 
-        <PieChart width={500} height={500}>
+        <PieChart className='bar-chart' width={500} height={500}>
           <Pie data={data1} dataKey="quantity" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
           <Pie data={data2} dataKey="quantity" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
         </PieChart>

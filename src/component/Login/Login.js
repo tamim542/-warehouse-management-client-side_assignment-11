@@ -50,8 +50,13 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password)
     const {data}=await axios.post('http://localhost:5000/login',{email})
     localStorage.setItem('accessToken',data.accessToken);
+   if(user){
     navigate(from, { replace: true });
-
+  }else{
+    return(
+      <p>Please enter correct email and password</p>
+    )
+  }
   }
 
   ///jwt for google signin --------
@@ -61,8 +66,12 @@ const Login = () => {
     const {data}=await axios.post('http://localhost:5000/login',{email})
     console.log('dataWithEmail=',data);
     localStorage.setItem('accessToken',data.accessToken);
-    navigate(from, { replace: true });
-  }
+  
+      navigate(from, { replace: true });
+    
+    }
+   
+  
   
   ///jwt ending
 

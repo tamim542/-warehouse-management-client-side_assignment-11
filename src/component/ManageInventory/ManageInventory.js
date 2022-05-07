@@ -62,12 +62,13 @@ const ManageInventory = () => {
     }
 
     return (
-        <div>
+        <div style={{marginTop:'20px'}}>
             {/* --------all item from homepage-------- */}
-            <div className='card-design'>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
 
                 {
-                    products.map(product => <div >
+                    products.map(product => <div className='col'>
+                        <div  className='card h-100'>
                         <Card style={{}}>
                             <Card.Img variant="top" src={product.img} />
                             <Card.Body>
@@ -85,6 +86,7 @@ const ManageInventory = () => {
                                
                             </Card.Body>
                         </Card>
+                        </div>
                     </div>)
                 }
 

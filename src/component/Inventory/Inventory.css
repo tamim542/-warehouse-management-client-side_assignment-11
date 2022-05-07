@@ -1,12 +1,12 @@
-
-
-.flex-item{
-    display: flex;
+.card-align{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
 .quantity-feild{
     height: 40px;
-    width: 400px;
+    width: 300px;
     margin-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;

@@ -1,32 +1,18 @@
-.nav-bar{
-    background-color: rgb(179, 4, 4);
-    height: 55px;
-    display: flex;
-    
-    align-items: center;
-    
-    
-}
 
-.header{
-    margin-left:200px ;
-    margin-right:200px ;
-    text-decoration: none;
-    
-    
-    
+
+
+.route{
+    display: flex;
 }
 .link-decoration{
-    text-decoration: none;
-    color: beige;
-    padding-left: 20px;
+     
     font-weight: bold;
     font-size: larger;
     
     
 }
-.link-decoration:hover{
-    color: darkolivegreen;
+.nav div ul li:hover{
+    color: rgb(41, 63, 3);
 }
 .link-decoration:focus{
     color: darkolivegreen;
@@ -36,23 +22,18 @@
     border: 1px solid rgb(11, 11, 71);
     border-radius: 3px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .signOut-button:hover{
     border: 1px solid rgb(11, 11, 71);
     border-radius: 3px;
     color: blue;
 }
+@media only screen and (max-width:688px){
+    .route{
+        display: block;
+    }    
 
-@media only screen and (max-width: 688px){
-    .header{
-       display: block;
-        padding: 10px;
-        
-    }
-    .menu Link{
-        background-color: indigo;
-        margin: 10px 0;
-        text-align: center;
-        border-radius: 10px;
-    }
 }

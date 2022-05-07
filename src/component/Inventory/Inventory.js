@@ -89,10 +89,11 @@ const Inventory = () => {
     return (
         <div>
             {/* --------six item from homepage-------- */}
-            <div className='flex-item'>
+            <div >
 
-                <div className='card-item'>
-                    <div>
+                <div className=' row row-cols-1 row-cols-md-2 row-cols-lg-3 card-item card-align'>
+                    <div className='col'>
+                        <div className='card h-100'>
                         <Card style={{}}>
                             <Card.Img variant="top" src={inventory.img} />
                             <Card.Body>
@@ -108,9 +109,10 @@ const Inventory = () => {
                         </Card>
                     </div>
                 </div>
+                </div>
 
                  {/* --------------Add quantity------------ */}
-                <div className='text-center'>
+                <div className='text-center quantity-button'>
                    <form onSubmit={addQuantity}>
                     <input type="number" name='quantity' className='quantity-feild' required />
                      <button className='button-quantity-add'>Add Quantity</button>  
