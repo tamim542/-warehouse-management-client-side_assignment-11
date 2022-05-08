@@ -64,7 +64,8 @@ const ManageInventory = () => {
     return (
         <div style={{marginTop:'20px'}}>
             {/* --------all item from homepage-------- */}
-            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
+            <div className='container'>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 '>
 
                 {
                     products.map(product => <div className='col'>
@@ -89,12 +90,13 @@ const ManageInventory = () => {
                         </div>
                     </div>)
                 }
+                </div>
 
             </div>
             {/* --------Add new item -------- */}
 
-            <div className='form-center'>
-                <div className='input-form'>
+            <div className='form-center1'>
+                <div >
                     <form className='form-control' onSubmit={handleForm}>
 
                         <h1 style={{ color: '#31c75e' }}>Add New Item</h1>

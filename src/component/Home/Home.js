@@ -89,6 +89,7 @@ const [brand,setBrand]=useState([])
       <br></br>
 
       {/* --------six item from homepage---card-design ------- */}
+      <div className='container'>
       <div className=' row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
       
         {
@@ -108,7 +109,7 @@ const [brand,setBrand]=useState([])
             </Card>
           </div></div>)
         }
-      
+      </div>
       </div>
       <div className='div-button'>
         <Link to='/manageInventory'><button className='inventory-button'>Manage Inventory</button></Link>

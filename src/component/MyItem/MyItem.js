@@ -6,7 +6,7 @@ import axiosPrivate from '../../Axios/axiosPrivate';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 //import axios from 'axios';
-
+import './MyItem.css';
 
 const MyItem = () => {
     const [user] = useAuthState(auth);
@@ -72,12 +72,12 @@ const MyItem = () => {
     }
 console.log('items=',items);
     return (
-        <div style={{ minHeight: '100vh'}}>
+        <div style={{ minHeight: '100vh'}} className='container card-margin'>
             {/* --------all item from homepage-------- */}
-            <div className='card-design'>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
 
                 {
-                    items.map(item => <div >
+                    items.map(item => <div className='col'><div className='card h-100'>
                         <Card style={{}}>
                             <Card.Img variant="top" src={item.img} />
                             <Card.Body>
@@ -95,7 +95,7 @@ console.log('items=',items);
                                
                             </Card.Body>
                         </Card>
-                    </div>)
+                    </div></div>)
                 }
 
             </div>

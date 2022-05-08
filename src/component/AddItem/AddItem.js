@@ -44,8 +44,8 @@ const AddItem = () => {
         <div>
              {/* --------Add new item -------- */}
 
-             <div className='form-center'>
-                <div className='input-form'>
+             <div className='form-center2'>
+                <div>
                     <form className='form-control' onSubmit={handleForm}>
 
                         <h1 style={{ color: '#31c75e' }}>Add New Item</h1>
