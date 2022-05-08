@@ -20,15 +20,16 @@ const Contact = () => {
             .then(response => response.json())
             .then(data => console.log(data));
 
+            event.target.reset();
     }
 
     return (
-        <div>
+       
             
 
-            <div className='form-center'>
-                <div className='input-form'></div>
-                <form className='form-control' onSubmit={handleForm}>
+            
+                <div className='form-center'>
+                <form  onSubmit={handleForm}>
 
                     <h1 style={{ color: '#31c75e' }}>Contact Form</h1>
                     <span>Email</span>
@@ -52,7 +53,7 @@ const Contact = () => {
                 </form>
             </div>
 
-        </div>
+       
     );
 };
 

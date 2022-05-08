@@ -53,29 +53,11 @@ const Login = () => {
     const email=emailRef.current.value;
     const password=passwordRef.current.value
     await signInWithEmailAndPassword(email, password)
-  //   const {data}=await axios.post('https://afternoon-badlands-12006.herokuapp.com/login',{email})
-  //   localStorage.setItem('accessToken',data.accessToken);
-  //  if(user){
-  //   navigate(from, { replace: true });
-  // }else{
-  //   return(
-  //     <p>Please enter correct email and password</p>
-  //   )
-  // }
+  
   }
 
   
-  ///jwt for google signin --------
-
-  // const handleGoogleSignin=async()=>{
-  //   await signInWithGoogle(email); 
-  //   // const {data}=await axios.post('https://afternoon-badlands-12006.herokuapp.com/login',{email})
-  //   // console.log('dataWithEmail=',data);
-  //   // localStorage.setItem('accessToken',data.accessToken);
   
-  //     navigate(from, { replace: true });
-    
-  //   }
    
   if (token) {
     navigate(from, { replace: true });
@@ -93,12 +75,7 @@ const Login = () => {
   if (loading || loadingGoogle) {
     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Loading></Loading></div>
   }
-  // if (user || userGoogle) {
-  //   navigate(from, { replace: true });
-  // }
-
   
-// reset password
 const resetPassword = async () => {
   const email =emailRef.current.value;
   if (email) {
@@ -114,7 +91,7 @@ const resetPassword = async () => {
 
 
   return (
-    <div>
+    <div style={{ minHeight: '100vh'}}>
       <div className='take-center'>
         <div className='login-form'>
 

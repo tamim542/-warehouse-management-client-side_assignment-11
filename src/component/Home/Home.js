@@ -143,7 +143,8 @@ const [brand,setBrand]=useState([])
       <br/>
          
             <div className='dashboard-chart'>
-            <LineChart className='bar-chart' width={600} height={300} data={products}>
+              <div className='bar-chart'>
+            <LineChart  width={600} height={300} data={products}>
             <Line type="monotone" dataKey="quantity" stroke="#8884d8" />
             <CartesianGrid stroke="#ccc" />
             <XAxis dataKey="name" />
@@ -151,11 +152,12 @@ const [brand,setBrand]=useState([])
             <Tooltip></Tooltip>
             </LineChart>
         
-
+            </div>
             
             {/* <BarChart -------------- */}
+            <div className='bar-chart'>
             <BarChart
-            className='bar-chart'
+           
           width={500}
           height={300}
           data={products}
@@ -166,6 +168,7 @@ const [brand,setBrand]=useState([])
             bottom: 5,
           }}
         >
+          
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
@@ -174,11 +177,12 @@ const [brand,setBrand]=useState([])
           <Bar dataKey="quantity" fill="#8884d8" background={{ fill: '#eee' }} />
           <Bar dataKey="price" fill="#82ca9d" />
         </BarChart>
-
+        </div>
+          <div className='bar-chart'>
 
 
         <AreaChart 
-        className='bar-chart'
+       
           width={500}
           height={400}
           data={products}
@@ -197,12 +201,15 @@ const [brand,setBrand]=useState([])
           <Area type="monotone" dataKey="quantity" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
         </AreaChart>
 
+        </div>
+          <div className='bar-chart'>
 
-        <PieChart className='bar-chart' width={500} height={500}>
+        <PieChart width={500} height={500}>
           <Pie data={data1} dataKey="quantity" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
           <Pie data={data2} dataKey="quantity" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
         </PieChart>
 
+         </div>
          </div>
     </div>
   );
