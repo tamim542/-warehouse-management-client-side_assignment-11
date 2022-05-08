@@ -23,7 +23,7 @@ const MyItem = () => {
         //       .then(res=>res.json())
         //       .then(data=>setItems(data))
             ///---------------
-            const email = user.email;
+            const email = user?.email;
             const url = `http://localhost:5000/item?email=${email}`;
             
               try{

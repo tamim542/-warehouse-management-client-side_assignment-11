@@ -36,6 +36,8 @@ const AddItem = () => {
             .then(response => response.json())
             .then(data => setProducts(data));
 
+            event.target.reset();
+
     }
 
     return (

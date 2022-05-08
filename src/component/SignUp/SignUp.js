@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './SignUp.css';
+import useToken from '../../Hooks/useToken';
 const SignUp = () => {
   
    
@@ -16,7 +17,7 @@ const SignUp = () => {
           user
           
         ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
-      
+        const [token] = useToken(user);
         // if (error) {
         //   return (
         //     <div>
@@ -39,8 +40,8 @@ const SignUp = () => {
                 const confirm=event.target.value;
                 setConfirmPassword(confirm);
         }
-        if (user) {
-            navigate('/');
+        if (token) {
+            navigate('/home');
         }
         const handleForm=(event)=>{
             event.preventDefault();

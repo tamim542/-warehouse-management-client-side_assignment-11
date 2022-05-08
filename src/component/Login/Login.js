@@ -12,6 +12,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import auth from '../../firebase.init';
 import { async } from '@firebase/util';
 import axios from 'axios';
+import useToken from '../../Hooks/useToken';
 
 
 const Login = () => {
@@ -20,6 +21,7 @@ const Login = () => {
   const passwordRef = useRef('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
   const navigate = useNavigate();
   const [
     signInWithEmailAndPassword,
@@ -40,38 +42,44 @@ const Login = () => {
     const password = event.target.value;
     setPassword(password);
   }
+  const [token] = useToken(user || userGoogle);
 
   ///jwt for email password --------
+
+  
 
   const handleForm = async(event) => {
     event.preventDefault();
     const email=emailRef.current.value;
     const password=passwordRef.current.value
     await signInWithEmailAndPassword(email, password)
-    const {data}=await axios.post('http://localhost:5000/login',{email})
-    localStorage.setItem('accessToken',data.accessToken);
-   if(user){
-    navigate(from, { replace: true });
-  }else{
-    return(
-      <p>Please enter correct email and password</p>
-    )
-  }
+  //   const {data}=await axios.post('http://localhost:5000/login',{email})
+  //   localStorage.setItem('accessToken',data.accessToken);
+  //  if(user){
+  //   navigate(from, { replace: true });
+  // }else{
+  //   return(
+  //     <p>Please enter correct email and password</p>
+  //   )
+  // }
   }
 
+  
   ///jwt for google signin --------
 
-  const handleGoogleSignin=async()=>{
-    await signInWithGoogle(email); 
-    const {data}=await axios.post('http://localhost:5000/login',{email})
-    console.log('dataWithEmail=',data);
-    localStorage.setItem('accessToken',data.accessToken);
+  // const handleGoogleSignin=async()=>{
+  //   await signInWithGoogle(email); 
+  //   // const {data}=await axios.post('http://localhost:5000/login',{email})
+  //   // console.log('dataWithEmail=',data);
+  //   // localStorage.setItem('accessToken',data.accessToken);
   
-      navigate(from, { replace: true });
+  //     navigate(from, { replace: true });
     
-    }
+  //   }
    
-  
+  if (token) {
+    navigate(from, { replace: true });
+}
   
   ///jwt ending
 
@@ -85,9 +93,9 @@ const Login = () => {
   if (loading || loadingGoogle) {
     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Loading></Loading></div>
   }
-  if (user || userGoogle) {
-    navigate(from, { replace: true });
-  }
+  // if (user || userGoogle) {
+  //   navigate(from, { replace: true });
+  // }
 
   
 // reset password
@@ -142,7 +150,7 @@ const resetPassword = async () => {
       <div className='icon-blog'>
         <div className='social-icon'>
         <button
-                    onClick={() =>handleGoogleSignin()}
+                    onClick={() =>signInWithGoogle()}
                     className='rounded-1 border border-success mx-auto my-2'>
                     <img style={{ width: '30px' }} src={googleIcon} alt="" />
                     <span className='px-2 fw-bold'>Google Sign In</span>

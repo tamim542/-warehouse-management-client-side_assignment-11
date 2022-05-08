@@ -28,8 +28,8 @@ const ManageInventory = () => {
         const price = event.target.price.value;
         const description = event.target.description.value;
         const quantity = event.target.quantity.value;
-        const suppliernam = event.target.suppliernam.value;
-        const item = {email, name, img, price, description, quantity, suppliernam };
+        const supplier = event.target.supplier.value;
+        const item = {email, name, img, price, description, quantity, supplier };
         fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -78,7 +78,7 @@ const ManageInventory = () => {
                                     {product.description}
                                 </Card.Text>
                                 <Card.Title>Quantity: {product.quantity}</Card.Title>
-                                <Card.Title>Supplier Man: {product.suppliernam}</Card.Title>
+                                <Card.Title>Supplier Man: {product.supplier}</Card.Title>
 
 
                                <Button variant="danger" onClick={() => handleDelete(product._id)}>Delete</Button>
@@ -130,7 +130,7 @@ const ManageInventory = () => {
                         <br />
                         <span>Supplier Name</span>
                         <br />
-                        <input type="text" name='suppliernam' className='input-feild' required />
+                        <input type="text" name='supplier' className='input-feild' required />
                         <br />
                         <br />
                         <button className='button-form'><span style={{ color: 'white' }}>Add Item</span></button>
