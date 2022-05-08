@@ -17,14 +17,14 @@ const MyItem = () => {
         
         const getItems = async() =>{
         //    const email = user.email;
-        //     const url = `http://localhost:5000/item?email=${email}`;
+        //     const url = `https://afternoon-badlands-12006.herokuapp.com/item?email=${email}`;
          
         //       fetch(url)
         //       .then(res=>res.json())
         //       .then(data=>setItems(data))
             ///---------------
             const email = user?.email;
-            const url = `http://localhost:5000/item?email=${email}`;
+            const url = `https://afternoon-badlands-12006.herokuapp.com/item?email=${email}`;
             
               try{
                 // const {data} = await axios.get(url,{
@@ -58,7 +58,7 @@ const MyItem = () => {
      const handleDelete = id =>{
         const deleteItem = window.confirm('Are you confirm to delete this item?');
         if(deleteItem){
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://afternoon-badlands-12006.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

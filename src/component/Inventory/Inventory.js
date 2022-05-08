@@ -10,7 +10,7 @@ const Inventory = () => {
     const [inventory, setInventory] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://afternoon-badlands-12006.herokuapp.com/products/${id}`
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -32,7 +32,7 @@ const Inventory = () => {
         const updatedDelivered = {quantity:quantity2,...rest};
         console.log(updatedDelivered);
         // put data to the server
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://afternoon-badlands-12006.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -62,7 +62,7 @@ const Inventory = () => {
     const updatedQuantity = {quantity:quantityAdd,...rest};
     console.log(updatedQuantity);
     // put data to the server
-    const url = `http://localhost:5000/quantity/${id}`;
+    const url = `https://afternoon-badlands-12006.herokuapp.com/quantity/${id}`;
     console.log('id',url)
     fetch(url, {
         method: 'PUT',

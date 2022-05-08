@@ -42,7 +42,7 @@ const Home = () => {
 const [brand,setBrand]=useState([])
     
         useEffect(()=>{
-            fetch('http://localhost:5000/productCount')
+            fetch('https://afternoon-badlands-12006.herokuapp.com/productCount')
             .then(res=>res.json())
             .then(data=>setBrand(data))
           },[])

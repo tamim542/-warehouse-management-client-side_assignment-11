@@ -30,7 +30,7 @@ const ManageInventory = () => {
         const quantity = event.target.quantity.value;
         const supplier = event.target.supplier.value;
         const item = {email, name, img, price, description, quantity, supplier };
-        fetch('http://localhost:5000/products', {
+        fetch('https://afternoon-badlands-12006.herokuapp.com/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(item)
@@ -48,7 +48,7 @@ const ManageInventory = () => {
     const handleDelete = id =>{
         const deleteItem = window.confirm('Are you confirm to delete this item?');
         if(deleteItem){
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://afternoon-badlands-12006.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

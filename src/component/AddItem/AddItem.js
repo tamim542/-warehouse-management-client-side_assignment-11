@@ -27,7 +27,7 @@ const AddItem = () => {
         const quantity = event.target.quantity.value;
         const suppliernam = event.target.suppliernam.value;
         const item = {email, name, img, price, description, quantity, suppliernam };
-        fetch('http://localhost:5000/products', {
+        fetch('https://afternoon-badlands-12006.herokuapp.com/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(item)

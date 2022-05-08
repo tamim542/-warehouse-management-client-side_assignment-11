@@ -11,7 +11,7 @@ const Contact = () => {
         const comment = event.target.comment.value;
         
         const item = { email, phone, comment};
-        fetch('http://localhost:5000/contactform', {
+        fetch('https://afternoon-badlands-12006.herokuapp.com/contactform', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(item)

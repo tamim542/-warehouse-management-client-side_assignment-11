@@ -53,7 +53,7 @@ const Login = () => {
     const email=emailRef.current.value;
     const password=passwordRef.current.value
     await signInWithEmailAndPassword(email, password)
-  //   const {data}=await axios.post('http://localhost:5000/login',{email})
+  //   const {data}=await axios.post('https://afternoon-badlands-12006.herokuapp.com/login',{email})
   //   localStorage.setItem('accessToken',data.accessToken);
   //  if(user){
   //   navigate(from, { replace: true });
@@ -69,7 +69,7 @@ const Login = () => {
 
   // const handleGoogleSignin=async()=>{
   //   await signInWithGoogle(email); 
-  //   // const {data}=await axios.post('http://localhost:5000/login',{email})
+  //   // const {data}=await axios.post('https://afternoon-badlands-12006.herokuapp.com/login',{email})
   //   // console.log('dataWithEmail=',data);
   //   // localStorage.setItem('accessToken',data.accessToken);
   
